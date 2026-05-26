@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --vivien-bg: linear-gradient(145deg, #fff8fb 0%, #fff6fa 45%, #f9f7ff 100%);
+        --vivien-surface: rgba(255, 255, 255, 0.88);
+        --vivien-border: rgba(244, 189, 211, 0.45);
+        --vivien-text: #3c3142;
+        --vivien-accent: #e86ca7;
+        --vivien-accent-dark: #d95d9a;
+    }
+
+    body {
+        @apply text-gray-800 font-['Inter'];
+        background: var(--vivien-bg);
+        background-attachment: fixed;
+        color: var(--vivien-text);
+    }
+
+    * {
+        @apply transition-colors duration-200;
+    }
+}
+
+@layer components {
+    .container-soft {
+        @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+    }
+
+    .card-soft {
+        @apply rounded-xl border backdrop-blur-xl shadow-sm transition-all duration-300;
+        border-color: var(--vivien-border);
+        background: var(--vivien-surface);
+        box-shadow: 0 12px 32px rgba(229, 170, 199, 0.16);
+    }
+
+    .card-soft:hover {
+        box-shadow: 0 16px 36px rgba(227, 154, 191, 0.2);
+    }
+
+    .btn-primary {
+        @apply rounded-lg px-6 py-3 font-semibold text-white shadow-md transform hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none;
+        background: linear-gradient(130deg, #ee8eb8 0%, #de6fa7 100%);
+        box-shadow: 0 10px 24px rgba(222, 111, 167, 0.34);
+    }
+
+    .btn-primary:hover {
+        background: linear-gradient(130deg, #e57bac 0%, #d85994 100%);
+        box-shadow: 0 14px 30px rgba(216, 89, 148, 0.38);
+    }
+
+    .btn-secondary {
+        @apply rounded-lg border px-6 py-3 font-semibold backdrop-blur-sm shadow-sm transition-all duration-300 transform hover:-translate-y-0.5;
+        border-color: rgba(232, 151, 189, 0.55);
+        background: rgba(255, 255, 255, 0.82);
+        color: #be4c86;
+    }
+
+    .btn-secondary:hover {
+        border-color: rgba(217, 93, 154, 0.65);
+        background: rgba(255, 244, 249, 0.96);
+        box-shadow: 0 10px 24px rgba(231, 159, 197, 0.2);
+    }
+
+    .btn-icon {
+        @apply p-2 rounded-md hover:bg-rose-100/50 transition-all duration-200;
+    }
+
+    .input-field {
+        @apply w-full rounded-lg border bg-white/85 px-4 py-3 backdrop-blur-sm outline-none transition-all duration-300;
+        border-color: rgba(240, 184, 208, 0.58);
+        color: var(--vivien-text);
+    }
+
+    .input-field:focus {
+        border-color: rgba(217, 93, 154, 0.85);
+        box-shadow: 0 0 0 3px rgba(225, 114, 168, 0.2);
+    }
+
+    .select-field {
+        @apply input-field pr-10 cursor-pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23c75f94' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.85rem center;
+        background-size: 0.95rem;
+    }
+
+    .select-field option {
+        background: #fff7fb;
+        color: #4a3f51;
+    }
+
+    .badge {
+        @apply inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-rose-100 text-rose-700;
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .skeleton {
+        @apply animate-pulse bg-gradient-to-r from-rose-100 via-pink-100 to-rose-100 rounded-lg;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-rose-50;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-rose-300 rounded-full hover:bg-rose-400;
+}
