@@ -18,8 +18,8 @@ app: {
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
     public: {
-      apiBase: 'https://iwebworker-vivien-back-d2e5.twc1.net/api',
-      mediaBase: 'https://iwebworker-vivien-back-d2e5.twc1.net'
+      apiBase: 'https://admin.vivienshop.site/api',
+      mediaBase: 'https://admin.vivienshop.site'
     }
   }
 })
