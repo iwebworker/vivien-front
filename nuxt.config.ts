@@ -18,8 +18,8 @@ app: {
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
     public: {
-      apiBase: 'http://127.0.0.1:8000/api',
-      mediaBase: 'http://127.0.0.1:8000'
+      apiBase: 'https://iwebworker-vivien-back-d2e5.twc1.net/api',
+      mediaBase: 'https://iwebworker-vivien-back-d2e5.twc1.net'
     }
   }
 })
